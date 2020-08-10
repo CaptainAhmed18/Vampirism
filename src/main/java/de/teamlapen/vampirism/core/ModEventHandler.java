@@ -11,7 +11,7 @@ import de.teamlapen.vampirism.entity.converted.VampirismEntityRegistry;
 import de.teamlapen.vampirism.modcompat.IntegrationsNotifier;
 import de.teamlapen.vampirism.network.BloodValuePacket;
 import de.teamlapen.vampirism.network.SkillTreePacket;
-import de.teamlapen.vampirism.tileentity.TotemTileEntity;
+import de.teamlapen.vampirism.tileentity.TotemHelper;
 import de.teamlapen.vampirism.util.Permissions;
 import de.teamlapen.vampirism.util.REFERENCE;
 import de.teamlapen.vampirism.world.MinionWorldData;
@@ -144,7 +144,7 @@ public class ModEventHandler {
     @SubscribeEvent
     public void onWorldUnload(WorldEvent.Unload event) {
         VampirismAPI.getGarlicChunkHandler(event.getWorld().getWorld()).clear();
-        TotemTileEntity.clearCacheForDimension(event.getWorld().getDimension());
+        TotemHelper.clearCacheForDimension(event.getWorld().getDimension());
     }
 
     @SubscribeEvent
